@@ -6,8 +6,6 @@
 ## 🌟 What is Kalpanā?
 Kalpanā is a high-performance local AI engine that allows you to chat with your documents (PDF, Text) with **100% privacy**. No data ever leaves your computer, and no internet is required.
 
-It is powered by the proprietary **RIF (Resonant Interference Field)** memory core, which replaces standard AI memory bottlenecks with a fixed-footprint holographic state.
-
 ---
 
 ## 📐 System Architecture
@@ -50,6 +48,8 @@ Traditional AI models suffer from the **"KV-Cache Bottleneck"**—as you give th
 2.  **Holographic Storage:** These waves are "recorded" into a fixed-size holographic field.
 3.  **Instantaneous Recall:** When you ask a question, the engine performs a "Temporal Sweep" of the field, recalling relevant facts in constant time ($O(1)$), regardless of the library size.
 
+---
+
 ## 📊 Performance Specifications
 Kalpanā is engineered for extreme efficiency on consumer hardware:
 *   **Memory Density:** Each Knowledge Pack is compressed into a tiny **6MB footprint**.
@@ -63,18 +63,9 @@ Kalpanā is engineered for extreme efficiency on consumer hardware:
 ### **🍏 macOS**
 1.  Go to the **[Releases](https://github.com/maduperera/Kalpana-Desktop/releases)** section of this repository.
 2.  Download **`Kalpanā-Mac.zip`**.
-3.  Unzip and drag **Kalpanā.app** to your Applications folder.
-4.  Double-click to launch!
-
-### **🪟 Windows**
-*   *Coming Soon!* The Windows installer is currently in final testing.
-
----
-
-## 🛠 Features
-*   **Fully Offline:** Run AI models on your own CPU.
-*   **Holographic Memory:** Instant recall from thousands of pages using the O(1) RIF engine.
-*   **Knowledge Packs:** Organize your research into portable, secure packs.
+3.  Double-click the zip to extract the **Kalpanā.app**.
+4.  **Important:** Since this is a beta, right-click **Kalpanā.app** and select **Open**. (If Mac shows a security warning, click "Open anyway").
+5.  Drag the app to your **Applications** folder for permanent use.
 
 ---
 
