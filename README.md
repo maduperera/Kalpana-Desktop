@@ -16,24 +16,30 @@ Kalpanā utilizes a sophisticated **Hybrid-Core Architecture** that decouples me
 ```mermaid
 graph TD
     subgraph "Knowledge Ingestion Layer"
-        A[Local Documents] --> B[Neural Embedding]
+        A[Raw PDF/Text] --> B[Neural Embedding]
         B --> C{Holographic RIF Core}
     end
 
+    subgraph "Portable Memory (.kp)"
+        C --> D["6MB Knowledge Pack"]
+        D --> E[Export/Import .kp File]
+    end
+
     subgraph "Associative Memory (O(1))"
-        D[User Query] --> E[RIF Frequency Sweep]
-        C --> E
-        E --> F[Contextual Recall]
+        F[User Query] --> G[RIF Frequency Sweep]
+        D --> G
+        G --> H[Contextual Recall]
     end
 
     subgraph "Reasoning Engine (Offline)"
-        F --> G[Local LLM Core]
-        D --> G
-        G --> H[Human-Readable Answer]
+        H --> I[Local LLM Core]
+        F --> I
+        I --> J[Human-Readable Answer]
     end
 
     style C fill:#003366,stroke:#00ccff,stroke-width:4px,color:#fff
-    style G fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
+    style D fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
+    style I fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
 ```
 
 ## 🧠 How it Works: RIF Technology
@@ -43,6 +49,12 @@ Traditional AI models suffer from the **"KV-Cache Bottleneck"**—as you give th
 1.  **Vector Conversion:** Documents are transformed into high-dimensional frequency waves.
 2.  **Holographic Storage:** These waves are "recorded" into a fixed-size holographic field.
 3.  **Instantaneous Recall:** When you ask a question, the engine performs a "Temporal Sweep" of the field, recalling relevant facts in constant time ($O(1)$), regardless of the library size.
+
+## 📊 Performance Specifications
+Kalpanā is engineered for extreme efficiency on consumer hardware:
+*   **Memory Density:** Each Knowledge Pack is compressed into a tiny **6MB footprint**.
+*   **Massive Capacity:** A single 6MB pack can store up to **3 Million tokens** of information.
+*   **Total Portability:** Knowledge is stored in **.kp files**, which can be easily exported and imported between devices via the Kalpanā interface.
 
 ---
 
