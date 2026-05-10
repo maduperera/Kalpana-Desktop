@@ -10,6 +10,42 @@ It is powered by the proprietary **RIF (Resonant Interference Field)** memory co
 
 ---
 
+## 📐 System Architecture
+Kalpanā utilizes a sophisticated **Hybrid-Core Architecture** that decouples memory from reasoning:
+
+```mermaid
+graph TD
+    subgraph "Knowledge Ingestion Layer"
+        A[Local Documents] --> B[Neural Embedding]
+        B --> C{Holographic RIF Core}
+    end
+
+    subgraph "Associative Memory (O(1))"
+        D[User Query] --> E[RIF Frequency Sweep]
+        C --> E
+        E --> F[Contextual Recall]
+    end
+
+    subgraph "Reasoning Engine (Offline)"
+        F --> G[Local LLM Core]
+        D --> G
+        G --> H[Human-Readable Answer]
+    end
+
+    style C fill:#003366,stroke:#00ccff,stroke-width:4px,color:#fff
+    style G fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
+```
+
+## 🧠 How it Works: RIF Technology
+Traditional AI models suffer from the **"KV-Cache Bottleneck"**—as you give the AI more information, it becomes exponentially slower and consumes more RAM.
+
+**Kalpanā solves this using the Resonant Interference Field (RIF):**
+1.  **Vector Conversion:** Documents are transformed into high-dimensional frequency waves.
+2.  **Holographic Storage:** These waves are "recorded" into a fixed-size holographic field.
+3.  **Instantaneous Recall:** When you ask a question, the engine performs a "Temporal Sweep" of the field, recalling relevant facts in constant time ($O(1)$), regardless of the library size.
+
+---
+
 ## 🚀 Download & Install
 
 ### **🍏 macOS**
