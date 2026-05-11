@@ -59,6 +59,12 @@ graph TD
         SIM --> R
     end
 
+    subgraph "System Performance"
+        UNIT["Unit: 0.25 MB / Layer"]
+        FIXED["Total: 6.0 MB (24 Layers)"]
+        CAP["Capacity: 3M+ Tokens"]
+    end
+
     subgraph "Hardware Acceleration"
         HW[Metal / NEON / AVX2]
     end
@@ -66,6 +72,8 @@ graph TD
     CONTEXT -->|Injection| KV_HOOK
     L0 --- W
     L23 --- R
+    FIXED --- UNIT
+    FIXED --- CAP
     HW -.-> GT
     HW -.-> W
     HW -.-> R
