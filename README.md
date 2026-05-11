@@ -8,46 +8,89 @@ Kalpanā is a high-performance local AI engine that allows you to chat with your
 
 ---
 
-## 📐 System Architecture
-Kalpanā utilizes a sophisticated **Offline-Core Architecture** that decouples memory from reasoning:
+## 📐 System Architecture: The Full-Stack Intelligence Pipeline
+Kalpanā v3.0.5 combines high-level semantic reasoning with a vectorized **C++ Native Engine**. The following diagram illustrates the journey from a Natural Language Prompt to a sub-millisecond holographic memory reconstruction.
 
 ```mermaid
 graph TD
-    subgraph "Interface Layer"
-        J[Offline Desktop Interface] <--> I[Flask Local API]
+    subgraph "Interface & Semantic Logic"
+        User([End User]) -->|Natural Language Prompt| QT[Question Transformer]
+        QT -->|Semantic Extraction| API[Flask Native Bridge]
     end
 
-    subgraph "Knowledge Ingestion"
-        A[Raw Documents: PDF/Text] --> B[Internal Sentence Transformer]
-        B --> C{Holographic RIF Core}
+    subgraph "Holographic Retrieval Pipeline"
+        API -->|Vectorized Query| RIF_SEARCH[RIF Associative Search]
+        KP_LOAD([.kp Knowledge Pack]) -->|Load 6MB State| RIF_SEARCH
+        RIF_SEARCH -->|Evidence Reconstruction| CONTEXT[Reconstructed Contextual Tensors]
     end
 
-    subgraph "Memory Retrieval (O(1))"
-        D[User Query] --> E[RIF Associative Search]
-        C --> E
-        E --> F[Contextual Evidence Shards]
+    subgraph "Native C++ Engine Core (llama.cpp)"
+        direction TB
+        LS[llama-server]
+        GT[GGML Tensor Engine]
+        KV_HOOK[KV-Cache RIF Interceptor]
+        
+        LS --> GT
+        GT --> KV_HOOK
     end
 
-    subgraph "Offline Reasoning Engine"
-        F --> G[Qwen 2.5 0.5B Instruct Local]
-        D --> G
-        G --> H[Final Response]
+    subgraph "Holographic Memory Stack (24 Layers)"
+        direction TB
+        L0[Layer 0: 0.25MB RIF Unit]
+        L1[Layer 1: 0.25MB RIF Unit]
+        LD[...]
+        L23[Layer 23: 0.25MB RIF Unit]
+        
+        KV_HOOK --> L0
+        KV_HOOK --> L1
+        KV_HOOK --> L23
     end
 
-    I --> D
-    H --> I
+    subgraph "Memory Physics (Per Unit)"
+        direction LR
+        W[Write: Freq Projection]
+        SRE[(Real State)]
+        SIM[(Imaginary State)]
+        R[Read: Phase Reconstruction]
+        
+        W --> SRE
+        W --> SIM
+        SRE --> R
+        SIM --> R
+    end
 
-    style C fill:#003366,stroke:#00ccff,stroke-width:4px,color:#fff
-    style G fill:#004d00,stroke:#00ff00,stroke-width:2px,color:#fff
+    subgraph "Hardware Acceleration"
+        HW[Metal / NEON / AVX2]
+    end
+
+    CONTEXT -->|Injection| KV_HOOK
+    L0 --- W
+    L23 --- R
+    HW -.-> GT
+    HW -.-> W
+    HW -.-> R
+
+    classDef logic fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff;
+    classDef native fill:#0f172a,stroke:#818cf8,stroke-width:2px,color:#fff;
+    classDef rif fill:#1e1b4b,stroke:#f472b6,stroke-width:3px,color:#fff;
+    classDef hw fill:#064e3b,stroke:#34d399,stroke-width:1px,color:#fff;
+
+    class QT,API,RIF_SEARCH,CONTEXT logic;
+    class LS,GT,KV_HOOK native;
+    class L0,L1,LD,L23,W,SRE,SIM,R rif;
+    class HW hw;
 ```
 
-## 🧠 How it Works: RIF Technology
-Traditional AI models suffer from the **"KV-Cache Bottleneck"**—as you give the AI more information, it becomes exponentially slower and consumes more RAM.
+---
 
-**Kalpanā solves this using the Resonant Interference Field (RIF):**
-1.  **Vector Conversion:** Documents are transformed into high-dimensional frequency waves.
-2.  **Holographic Storage:** These waves are "recorded" into a fixed-size holographic field.
-3.  **Instantaneous Recall:** When you ask a question, the engine performs a "Temporal Sweep" of the field, recalling relevant facts in constant time ($O(1)$), regardless of the library size.
+## 🧠 How it Works: RIF Native Technology
+Traditional AI models suffer from the **"KV-Cache Bottleneck"**—as conversations grow, the model becomes exponentially slower and consumes massive RAM.
+
+**Kalpanā solves this using the native C++ Resonant Interference Field (RIF):**
+1.  **Semantic Projection:** Prompt signatures are transformed into frequency waves via the **Question Transformer**.
+2.  **Holographic Compression:** Each model layer (24 total) stores its attention state in a tiny **0.25 MB** interference unit.
+3.  **Direct Tensor Hooking:** The engine hooks directly into the `ggml` pipeline, reconstructing KV-tensors in constant time ($O(1)$) with near-zero latency using SIMD acceleration (Metal/NEON).
+
 
 ---
 
