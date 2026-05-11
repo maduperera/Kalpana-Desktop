@@ -1,4 +1,4 @@
-# <img src="./icon-192.png" width="48" height="48" align="center" style="border-radius: 12px;"> Kalpanā Desktop | Public Beta
+# Kalpanā Desktop | Public Beta
 ### *Private, Offline AI for Everyone.*
 
 ---
@@ -9,35 +9,36 @@ Kalpanā is a high-performance local AI engine that allows you to chat with your
 ---
 
 ## 📐 System Architecture
-Kalpanā utilizes a sophisticated **Hybrid-Core Architecture** that decouples memory from reasoning:
+Kalpanā utilizes a sophisticated **Offline-Core Architecture** that decouples memory from reasoning:
 
 ```mermaid
 graph TD
-    subgraph "Knowledge Ingestion Layer"
-        A[Raw PDF/Text] --> B[Neural Embedding]
+    subgraph "Interface Layer"
+        J[Offline Desktop Interface] <--> I[Flask Local API]
+    end
+
+    subgraph "Knowledge Ingestion"
+        A[Raw Documents: PDF/Text] --> B[Internal Sentence Transformer]
         B --> C{Holographic RIF Core}
     end
 
-    subgraph "Portable Memory (.kp)"
-        C --> D["6MB Knowledge Pack"]
-        D --> E[Export/Import .kp File]
+    subgraph "Memory Retrieval (O(1))"
+        D[User Query] --> E[RIF Associative Search]
+        C --> E
+        E --> F[Contextual Evidence Shards]
     end
 
-    subgraph "Associative Memory (O(1))"
-        F[User Query] --> G[RIF Frequency Sweep]
+    subgraph "Offline Reasoning Engine"
+        F --> G[Qwen 2.5 0.5B Instruct Local]
         D --> G
-        G --> H[Contextual Recall]
+        G --> H[Final Response]
     end
 
-    subgraph "Reasoning Engine (Offline)"
-        H --> I[Local LLM Core]
-        F --> I
-        I --> J[Human-Readable Answer]
-    end
+    I --> D
+    H --> I
 
     style C fill:#003366,stroke:#00ccff,stroke-width:4px,color:#fff
-    style D fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
-    style I fill:#003366,stroke:#00ccff,stroke-width:2px,color:#fff
+    style G fill:#004d00,stroke:#00ff00,stroke-width:2px,color:#fff
 ```
 
 ## 🧠 How it Works: RIF Technology
@@ -59,6 +60,12 @@ Kalpanā is engineered for extreme efficiency on consumer hardware:
 ---
 
 ## 🚀 Download & Install
+
+### **🪟 Windows**
+1.  Go to the **[Releases](https://github.com/maduperera/Kalpana-Desktop/releases)** section of this repository.
+2.  Download **`Kalpana_Setup.exe`**.
+3.  Double-click the installer and follow the setup wizard.
+4.  Launch **Kalpanā AI** from your desktop or Start Menu!
 
 ### **🍏 macOS**
 1.  Go to the **[Releases](https://github.com/maduperera/Kalpana-Desktop/releases)** section of this repository.
