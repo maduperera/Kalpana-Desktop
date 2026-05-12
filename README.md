@@ -110,6 +110,26 @@ Kalpanā is engineered for extreme efficiency on consumer hardware:
 
 ---
 
+## 💻 Cross-Platform Architectural Equivalence
+
+Kalpanā is designed to provide a consistent experience across different operating systems. Whether running as a macOS `.app` or a Windows `.exe`, the underlying intelligence and memory architecture remain identical.
+
+| Feature | macOS (.dmg) | Windows (.exe) |
+| :--- | :--- | :--- |
+| **LLM Model** | Qwen 2.5 0.5B (GGUF) | Qwen 2.5 0.5B (GGUF) |
+| **Memory Engine** | Kalpanā RIF (C++ Native) | Kalpanā RIF (C++ Native) |
+| **Frontend** | HTML5 / JS / Tailwind | HTML5 / JS / Tailwind |
+| **Backend Proxy** | Flask (Standalone Binary) | Flask (Standalone Binary) |
+| **Acceleration** | Apple Metal | AVX2 / CUDA / Vulkan |
+
+### **Hardware Acceleration Details**
+*   **macOS**: The engine is compiled with **Metal** support, allowing it to leverage the high-speed unified memory and GPU on Apple Silicon (M1/M2/M3) for sub-millisecond memory retrieval.
+*   **Windows**: The engine is compiled with **AVX2** instructions for maximum performance on modern Intel/AMD CPUs. It can also be configured to use **CUDA** if an NVIDIA GPU is detected.
+
+---
+
+---
+
 ## 🚀 Download & Install
 
 ### **🪟 Windows**
